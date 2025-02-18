@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Interaktif Hiragana, Katakana, dan Kanji</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tables = document.querySelectorAll("table");
+            tables.forEach(table => {
+                const headers = table.querySelectorAll("th");
+                headers.forEach((header, index) => {
+                    header.addEventListener("click", () => sortTable(table, index));
+                });
+            });
+        });
+
+        function sortTable(table, columnIndex) {
+            const rows = Array.from(table.querySelectorAll("tbody tr"));
+            const sortedRows = rows.sort((a, b) => {
+                const aText = a.cells[columnIndex].textContent.trim();
+                const bText = b.cells[columnIndex].textContent.trim();
+                return aText.localeCompare(bText);
+            });
+            const tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            sortedRows.forEach(row => tbody.appendChild(row));
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <caption>Hiragana</caption>
+        <thead>
+            <tr>
+                <th>Romanisasi</th>
+                <th>Hiragana</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>あ</td></tr>
+            <tr><td>I</td><td>い</td></tr>
+            <tr><td>U</td><td>う</td></tr>
+            <tr><td>E</td><td>え</td></tr>
+            <tr><td>O</td><td>お</td></tr>
+            <tr><td>Ka</td><td>か</td></tr>
+            <tr><td>Ki</td><td>き</td></tr>
+            <tr><td>Ku</td><td>く</td></tr>
+            <tr><td>Ke</td><td>け</td></tr>
+            <tr><td>Ko</td><td>こ</td></tr>
+            <tr><td>Sa</td><td>さ</td></tr>
+            <tr><td>Shi</td><td>し</td></tr>
+            <tr><td>Su</td><td>す</td></tr>
+            <tr><td>Se</td><td>せ</td></tr>
+            <tr><td>So</td><td>そ</td></tr>
+            <tr><td>Ta</td><td>た</td></tr>
+            <tr><td>Chi</td><td>ち</td></tr>
+            <tr><td>Tsu</td><td>つ</td></tr>
+            <tr><td>Te</td><td>て</td></tr>
+            <tr><td>To</td><td>と</td></tr>
+            <tr><td>Na</td><td>な</td></tr>
+            <tr><td>Ni</td><td>に</td></tr>
+            <tr><td>Nu</td><td>ぬ</td></tr>
+            <tr><td>Ne</td><td>ね</td></tr>
+            <tr><td>No</td><td>の</td></tr>
+            <tr><td>Ha</td><td>は</td></tr>
+            <tr><td>Hi</td><td>ひ</td></tr>
+            <tr><td>Fu</td><td>ふ</td></tr>
+            <tr><td>He</td><td>へ</td></tr>
+            <tr><td>Ho</td><td>ほ</td></tr>
+            <tr><td>Ma</td><td>ま</td></tr>
+            <tr><td>Mi</td><td>み</td></tr>
+            <tr><td>Mu</td><td>む</td></tr>
+            <tr><td>Me</td><td>め</td></tr>
+            <tr><td>Mo</td><td>も</td></tr>
+            <tr><td>Ya</td><td>や</td></tr>
+            <tr><td>Yu</td><td>ゆ</td></tr>
+            <tr><td>Yo</td><td>よ</td></tr>
+            <tr><td>Ra</td><td>ら</td></tr>
+            <tr><td>Ri</td><td>り</td></tr>
+            <tr><td>Ru</td><td>る</td></tr>
+            <tr><td>Re</td><td>れ</td></tr>
+            <tr><td>Ro</td><td>ろ</td></tr>
+            <tr><td>Wa</td><td>わ</td></tr>
+            <tr><td>Wo</td><td>を</td></tr>
+            <tr><td>N</td><td>ん</td></tr>
+        </tbody>
+    </table>
+
+    <table>
+        <caption>Katakana</caption>
+        <thead>
+            <tr>
+                <th>Romanisasi</th>
+                <th>Katakana</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>ア</td></tr>
+            <tr><td>I</td><td>イ</td></tr>
+            <tr><td>U</td><td>ウ</td></tr>
+            <tr><td>E</td><td>エ</td></tr>
+            <tr><td>O</td><td>オ</td></tr>
+            <tr><td>Ka</td><td>カ</td></tr>
+            <tr><td>Ki</td><td>キ</td></tr>
+            <tr><td>Ku</td><td>ク</td></tr>
+            <tr><td>Ke</td><td>ケ</td></tr>
+            <tr><td>Ko</td><td>コ</td></tr>
+            <tr><td>Sa</td><td>サ</td></tr>
+            <tr><td>Shi</td><td>シ</td></tr>
+            <tr><td>Su</td><td>ス</td></tr>
+            <tr><td>Se</td><td>セ</td></tr>
+            <tr><td>So</td><td>ソ</td></tr>
+            <tr><td>Ta</td><td>タ</td></tr>
+            <tr><td>Chi</td><td>チ</td></tr>
+            <tr><td>Tsu</td><td>ツ</td></tr>
+            <tr><td>Te</td><td>テ</td></tr>
+            <tr><td>To</td><td>ト</td></tr>
+            <tr><td>Na</td><td>ナ</td></tr>
+            <tr><td>Ni</td><td>ニ</td></tr>
+            <tr><td>Nu</td><td>ヌ</td></tr>
+            <tr><td>Ne</td><td>ネ</td></tr>
+            <tr><td>No</td><td>ノ</td></tr>
+            <tr><td>Ha</td><td>ハ</td></tr>
+            <tr><td>Hi</td><td>ヒ</td></tr>
+            <tr><td>Fu</td><td>フ</td></tr>
+            <tr><td>He</td><td>ヘ</td></tr>
+            <tr><td>Ho</td><td>ホ</td></tr>
+            <tr><td>Ma</td><td>マ</td></tr>
+            <tr><td>Mi</td><td>ミ</td></tr>
+            <tr><td>Mu</td><td>ム</td></tr>
+            <tr><td>Me</td><td>メ</td></tr>
+            <tr><td>Mo</td><td>モ</td></tr>
+            <tr><td>Ya</td><td>ヤ</td></tr>
+            <tr><td>Yu</td><td>ユ</td></tr>
+            <tr><td>Yo</td><td>ヨ</td></tr>
+            <tr><td>Ra</td><td>ラ</td></tr>
+            <tr><td>Ri</td><td>リ</td></tr>
+            <tr><td>Ru</td><td>ル</td></tr>
+            <tr><td>Re</td><td>レ</td></tr>
+            <tr><td>Ro</td><td>ロ</td></tr>
+            <tr><td>Wa</td><td>ワ</td></tr>
+            <tr><td>Wo</td><td>ヲ</td></tr>
+            <tr><td>N</td><td>ン</td></tr>
+        </tbody>
+    </table>
+
+    <table>
+        <caption>Kanji Dasar</caption>
+        <thead>
+            <tr>
+                <th>Romanisasi</th>
+                <th>Kanji</th>
+                <th>Arti</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Yama</td><td>山</td><td>Gunung</td></tr>
+            <tr><td>Kawa</td><td>川</td><td>Sungai</td></tr>
+            <tr><td>Sora</td><td>空</td><td>Langit</td></tr>
+            <tr><td>Hana</td><td>花</td><td>Bunga</td></tr>
+            <tr><td>Umi</td><td>海</td><td>Laut</td></tr>
+            <tr><td>Hi</td><td>日</td><td>Matahari</td></tr>
+            <tr><td>Tsuki</td><td>月</td><td>Bulan</td></tr>
+            <tr><td>Hoshi</td><td>星</td><td>Bintang</td></tr>
+            <tr><td>Ki</td><td>木</td><td>Pohon</td></tr>
+            <tr><td>Mori</td><td>森</td><td>Hutan</td></tr>
+            <tr><td>Mizu</td><td>水</td><td>Air</td></tr>
+            <tr><td>Hi</td><td>火</td><td>Api</td></tr>
+            <tr><td>Do</td><td>土</td><td>Tanah</td></tr>
+            <tr><td>Sora</td><td>天</td><td>Langit</td></tr>
+            <tr><td>Hito</td><td>人</td><td>Orang</td></tr>
+            <tr><td>Onna</td><td>女</td><td>Perempuan</td></tr>
+            <tr><td>Otoko</td><td>男</td><td>Laki-laki</td></tr>
+            <tr><td>Ko</td><td>子</td><td>Anak</td></tr>
+            <tr><td>Kaze</td><td>風</td><td>Angin</td></tr>
+            <tr><td>Yuki</td><td>雪</td><td>Salju</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>
