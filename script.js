@@ -135,7 +135,7 @@ const huruf = [
       document.getElementById('result').textContent = 'Benar! 🎉';
       skor++;
     } else {
-      document.getElementById('result').textContent = `Salah! Jawaban yang benar adalah "${hurufSekarang.bacaan}".`;
+      document.getElementById('result').textContent = `Salah! Jawaban Yg benar adalah "${hurufSekarang.bacaan}". Lihat <a href='TABELHURUF.html'>Tabel Huruf</a>`;
     }
     document.getElementById('score').textContent = `Skor: ${skor}`;
     document.getElementById('answer').value = '';
