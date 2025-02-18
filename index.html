@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .header img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #f5f5f5;
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-out; 
+            clip-path: circle(50% at 50% 50%);
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in;
+        }
+        .header p {
+            font-size: 1.2em;
+            animation: fadeIn 2s ease-in;
+        }
+        /* Social Links */
+        .social-links {
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #f5f5f5;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #00adb5;
+        }
+        /* Projects Section */
+        .projects {
+            margin-top: 50px;
+        }
+        .projects h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            animation: slideUp 1s ease-out;
+        }
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .project-item {
+            background: #272727;
+            width: 30%;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .project-item:hover {
+            transform: scale(1.05);
+        }
+        .project-item h3 {
+            margin-bottom: 10px;
+            color: #00adb5;
+        }
+        .project-item p {
+            font-size: 0.9em;
+        }
+        .project-item a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #00adb5;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .project-item a:hover {
+            color: #f5f5f5;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .project-item {
+                width: 80%;
+            }
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        @keyframes slideDown {
+            from {transform: translateY(-50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+        @keyframes slideUp {
+            from {transform: translateY(50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="Assets\ppictures2.jpg" alt="Profile Picture">
+            <h1>Bayu Laksono</h1>
+            <p>I am a Person who Likes to do Many things. I Love to Build body Strength, also I really Enthusiastic wiht Science and Art.<br><br><i>Feel Free to Know me in Social media</i> </p>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@skyghost.id?is_from_webapp=1&sender_device=pc" target="_blank">TikTod</a>
+                <a href="https://www.instagram.com/sky.namz" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@SkyGhostID" target="_blank">YouTube</a>
+            </div>
+        </div>
+        <!-- Projects Section -->
+        <div class="projects">
+            <h2>My Projects</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <h3>Mini Projecct - Tebak Huruf Jepang</h3>
+                    <p>Tebak Huruf jepang Kanji, Hiragana, Katakana. Dengan UI Interaktif. Ditambah Dengan Tabel Huruf Jepang. Project Version v1.0.0</p>
+                    <a href="https://project1.com" target="_blank">View Project</a>
+                </div>
+                <div class="project-item">
+                    <h3>AI Chat Bot</h3>
+                    <p>Masih dalam Pengembangan..</p>
+                    <a href="https://project1.com" target="_blank">View Project</a>
+                </div>
+                <div class="project-item">
+                    <h3>Youtube MP3 Converter</h3>
+                    <p>Masih dalam Pengembangan..</p>
+                    <a href="https://project1.com" target="_blank">View Project</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
