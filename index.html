@@ -21,8 +21,7 @@
       --font: 'Poppins', sans-serif;
       --bar-bg: rgba(255,255,255,0.1);
     }
-
-    /* Light theme when html has class="light" */
+    /* Light theme via class */
     html.light {
       --bg: #f5f5f5;
       --fg: #222;
@@ -69,13 +68,15 @@
       .hamburger { display: block; }
     }
 
-    /* Sections */
+    /* Sections & Animations */
     section {
       padding: 80px 20px; max-width: 1000px; margin:auto;
       opacity:0; transform:translateY(20px);
       transition: opacity .6s ease-out, transform .6s ease-out;
     }
     section.visible { opacity:1; transform:translateY(0); }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes slideDown { from{transform:translateY(-50px);opacity:0;} to{transform:translateY(0);opacity:1;} }
 
     /* Home */
     #home { text-align:center; padding-top:120px; }
@@ -119,18 +120,15 @@
       transform: translateY(-3px);
     }
     .social-links svg {
-      width:24px;   /* resize icons */
-      height:24px;
-      margin-right:6px;
+      width:24px; height:24px; margin-right:6px;
+    }
+
+    /* About, Skills, Projects, Contact headings */
+    #about h2, #skills h2, #projects h2, #contact h2 {
+      text-align:center; margin-bottom:20px; font-size:2em;
     }
 
     /* About */
-    #about h2,
-    #skills h2,
-    #projects h2,
-    #contact h2 {
-      text-align:center; margin-bottom:20px; font-size:2em;
-    }
     #about .bio {
       max-width: 800px; margin: auto;
       background: var(--bg-alt); backdrop-filter: blur(10px);
@@ -193,9 +191,17 @@
     }
     #toTop:hover { transform: scale(1.1); }
 
-    /* Animations */
-    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-    @keyframes slideDown { from{transform:translateY(-50px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+    /* MOBILE FONT ADJUSTMENTS */
+    @media (max-width:480px) {
+      #home h1 { font-size:2em; }
+      #home .tagline { font-size:1em; }
+      .description { font-size:0.95em; padding:20px; }
+      .social-links a { padding:8px; font-size:0.9em; }
+      #about .bio, #contact p { font-size:0.95em; padding:20px; }
+      #about h2, #skills h2, #projects h2, #contact h2 { font-size:1.6em; }
+      .skill-bar span { font-size:0.9em; }
+      .project-item { width:90%; padding:20px; }
+    }
   </style>
 </head>
 
@@ -294,28 +300,24 @@
     document.getElementById('hamburger').onclick = () => {
       document.getElementById('navLinks').classList.toggle('show');
     };
-
     // Scroll animations
     const sections = document.querySelectorAll('section');
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
     }, { threshold: 0.2 });
     sections.forEach(s => obs.observe(s));
-
     // Theme toggle
     const themeBtn = document.getElementById('themeToggle');
     themeBtn.onclick = () => {
       document.documentElement.classList.toggle('light');
       themeBtn.textContent = document.documentElement.classList.contains('light') ? '🌙' : '🌓';
     };
-
     // Skill bars animation
     window.addEventListener('load', () => {
       document.querySelectorAll('.bar-fill').forEach(el => {
         el.style.width = el.getAttribute('data-fill');
       });
     });
-
     // Back to top
     const toTop = document.getElementById('toTop');
     window.onscroll = () => {
@@ -325,3 +327,5 @@
   </script>
 </body>
 </html>
+
+
