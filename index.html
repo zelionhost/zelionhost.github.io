@@ -1,190 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About Me</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
-    <style>
-        /* Global Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to bottom, #141e30, #243b55);
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-            padding: 30px;
-        }
+  <meta charset="UTF-8">
+  <title>Naetziel Laksono</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        /* Header Section */
-        .header {
-            text-align: center;
-            padding: 60px 0;
-        }
-        .header img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ffffff40;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            margin-bottom: 20px;
-            animation: slideDown 1s ease-out;
-        }
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            animation: fadeIn 2s ease-in;
-        }
-        .header p {
-            font-size: 1.1em;
-            max-width: 700px;
-            margin: 0 auto;
-            animation: fadeIn 2s ease-in;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
 
-        /* Social Links */
-        .social-links {
-            margin-top: 25px;
-            animation: fadeIn 2s ease-in;
-        }
-        .social-links a {
-            margin: 0 12px;
-            color: #00ffc3;
-            text-decoration: none;
-            font-size: 1.4em;
-            transition: all 0.3s ease;
-        }
-        .social-links a:hover {
-            color: #ffffff;
-        }
+  <style>
+    :root {
+      --bg: #141e30;
+      --bg-alt: rgba(255,255,255,0.05);
+      --fg: #e0e0e0;
+      --accent: #00ffc3;
+      --font: 'Roboto', sans-serif;
+    }
+    [data-theme="light"] {
+      --bg: #f5f5f5;
+      --fg: #222;
+      --bg-alt: rgba(0,0,0,0.05);
+      --accent: #0066cc;
+    }
 
-        /* Projects Section */
-        .projects {
-            margin-top: 60px;
-        }
-        .projects h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2em;
-            animation: slideUp 1s ease-out;
-        }
-        .project-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-        }
-        .project-item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 300px;
-            padding: 25px;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-        .project-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-        }
-        .project-item h3 {
-            margin-bottom: 12px;
-            color: #00ffc3;
-            font-size: 1.3em;
-        }
-        .project-item p {
-            font-size: 0.95em;
-        }
-        .project-item a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #00ffc3;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .project-item a:hover {
-            color: #ffffff;
-        }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--fg);
+      line-height:1.6;
+      transition: background .3s, color .3s;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .project-list {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+    /* Navbar */
+    nav {
+      position: sticky;
+      top:0; left:0; right:0;
+      background: var(--bg-alt);
+      backdrop-filter: blur(10px);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 20px;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-links { display: flex; gap: 15px; }
+    .nav-links a { font-weight:500; }
+    .toggle-btn {
+      background: none; border: none; font-size:1.2em;
+      cursor: pointer; color: var(--fg);
+    }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        @keyframes slideDown {
-            from {transform: translateY(-50px); opacity: 0;}
-            to {transform: translateY(0); opacity: 1;}
-        }
-        @keyframes slideUp {
-            from {transform: translateY(50px); opacity: 0;}
-            to {transform: translateY(0); opacity: 1;}
-        }
-    </style>
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px; margin: auto;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .6s ease-out, transform .6s ease-out;
+    }
+    section.visible {
+      opacity:1; transform: translateY(0);
+    }
+
+    /* Header */
+    #home { text-align: center; padding-top:120px; }
+    #home img {
+      width:160px; height:160px; border-radius:50%;
+      object-fit:cover; border:3px solid rgba(255,255,255,0.4);
+      box-shadow:0 4px 15px rgba(0,0,0,0.4); margin-bottom:20px;
+      animation: slideDown 1s ease-out;
+    }
+    #home h1 { font-size:2.8em; margin-bottom:10px; animation: fadeIn 2s; }
+    #home p { font-size:1.1em; max-width:700px; margin: auto; animation: fadeIn 2s; }
+
+    /* About */
+    #about h2 { text-align:center; margin-bottom:20px; font-size:2em; }
+    #about .bio { font-size:1em; line-height:1.8; }
+
+    /* Projects */
+    #projects h2 { text-align:center; margin-bottom:30px; font-size:2em; }
+    .project-list {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:25px;
+    }
+    .project-item {
+      background: var(--bg-alt); backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,0.1); width:300px;
+      padding:25px; border-radius:12px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .project-item:hover {
+      transform:translateY(-5px);
+      box-shadow:0 12px 25px rgba(0,0,0,0.3);
+    }
+    .project-item h3 { margin-bottom:12px; color:var(--accent); font-size:1.3em; }
+    .project-item p { font-size:0.95em; }
+    .project-item a { font-weight:500; display:inline-block; margin-top:10px; }
+
+    /* Contact */
+    #contact h2 { text-align:center; margin-bottom:20px; font-size:2em; }
+    #contact p { text-align:center; }
+
+    /* Animations */
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes slideDown { from{transform:translateY(-50px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <img src="Assets/ppictures2.jpg" alt="Profile Picture">
-            <h1>Bayu Laksono</h1>
-            <p>
-                I am a Person who Likes to do Many things. I Love to Build body Strength,  
-                also I really Enthusiastic with Science and Art.<br><br>
-                <i>Feel Free to Know me in Social media</i>
-            </p>
-            <div class="social-links">
-                <a href="https://www.tiktok.com/@skyghost.id?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
-                <a href="https://www.instagram.com/sky.namz" target="_blank">Instagram</a>
-                <a href="https://www.youtube.com/@SkyGhostID" target="_blank">YouTube</a>
-            </div>
-        </div>
 
-        <!-- Projects Section -->
-        <div class="projects">
-            <h2>My Projects</h2>
-            <div class="project-list">
-                <div class="project-item">
-                    <h3>Mini Project - Tebak Huruf Jepang</h3>
-                    <p>
-                        Tebak Huruf Jepang Kanji, Hiragana, Katakana. Dengan UI Interaktif.  
-                        Ditambah Dengan Tabel Huruf Jepang. Project Version v1.0.0
-                    </p>
-                    <a href="SkyGhostID-TebakHurufJepang/index.html" target="_blank">View Project</a>
-                </div>
-                <div class="project-item">
-                    <h3>AI Chat Bot</h3>
-                    <p>Masih dalam Pengembangan..</p>
-                    <a href="#" target="_blank">View Project</a>
-                </div>
-                <div class="project-item">
-                    <h3>Youtube MP3 Converter</h3>
-                    <p>Masih dalam Pengembangan..</p>
-                    <a href="#" target="_blank">View Project</a>
-                </div>
-            </div>
-        </div>
+<body data-theme="dark">
+  <nav>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
+    <button class="toggle-btn" id="themeToggle">☀️</button>
+  </nav>
+
+  <section id="home">
+    <img src="Assets/ppictures2.jpg" alt="Profile Picture">
+    <h1>Naetziel Laksono</h1>
+    <p>Enthusiastic about body strength, science & art. Welcome to my personal space on the web!</p>
+    <div class="social-links">
+      <a href="https://tiktok.com/@skyghost.id" target="_blank">TikTok</a>
+      <a href="https://instagram.com/sky.namz" target="_blank">Instagram</a>
+      <a href="https://youtube.com/@SkyGhostID" target="_blank">YouTube</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="bio">
+      Hi, I’m Naetziel Laksono. I love pushing my physical and creative limits—whether it’s building body strength in the gym, diving deep into scientific curiosities, or expressing myself through art. Let’s connect and create something amazing together!
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-list">
+      <div class="project-item">
+        <h3>Mini Project: Tebak Huruf Jepang</h3>
+        <p>Guess Kanji, Hiragana, Katakana with interactive UI + reference table. v1.0.0</p>
+        <a href="SkyGhostID-TebakHurufJepang/index.html" target="_blank">View Project</a>
+      </div>
+      <div class="project-item">
+        <h3>AI Chat Bot</h3>
+        <p>Under development…</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+      <div class="project-item">
+        <h3>YouTube MP3 Converter</h3>
+        <p>Under development…</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out on any social platform above. Let’s collaborate!</p>
+  </section>
+
+  <script>
+    // Intersection Observer for scroll animations
+    const sections = document.querySelectorAll('section');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(s => obs.observe(s));
+
+    // Theme toggle
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', () => {
+      const html = document.body;
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        btn.textContent = '🌙';
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        btn.textContent = '☀️';
+      }
+    });
+  </script>
 </body>
 </html>
