@@ -15,31 +15,31 @@
         }
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #1e1e1e;
-            color: #f5f5f5;
+            background: linear-gradient(to bottom, #141e30, #243b55);
+            color: #e0e0e0;
             line-height: 1.6;
         }
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: auto;
-            overflow: hidden;
-            padding: 20px;
+            padding: 30px;
         }
+
         /* Header Section */
         .header {
             text-align: center;
-            padding: 50px 0;
+            padding: 60px 0;
         }
         .header img {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #f5f5f5;
+            border: 3px solid #ffffff40;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             margin-bottom: 20px;
-            animation: slideDown 1s ease-out; 
-            clip-path: circle(50% at 50% 50%);
+            animation: slideDown 1s ease-out;
         }
         .header h1 {
             font-size: 2.5em;
@@ -47,78 +47,87 @@
             animation: fadeIn 2s ease-in;
         }
         .header p {
-            font-size: 1.2em;
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
             animation: fadeIn 2s ease-in;
         }
+
         /* Social Links */
         .social-links {
-            margin-top: 20px;
+            margin-top: 25px;
             animation: fadeIn 2s ease-in;
         }
         .social-links a {
-            margin: 0 10px;
-            color: #f5f5f5;
+            margin: 0 12px;
+            color: #00ffc3;
             text-decoration: none;
-            font-size: 1.5em;
-            transition: color 0.3s;
+            font-size: 1.4em;
+            transition: all 0.3s ease;
         }
         .social-links a:hover {
-            color: #00adb5;
+            color: #ffffff;
         }
+
         /* Projects Section */
         .projects {
-            margin-top: 50px;
+            margin-top: 60px;
         }
         .projects h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-size: 2em;
             animation: slideUp 1s ease-out;
         }
         .project-list {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 25px;
         }
         .project-item {
-            background: #272727;
-            width: 30%;
-            margin: 15px 0;
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 300px;
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         .project-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
         }
         .project-item h3 {
-            margin-bottom: 10px;
-            color: #00adb5;
+            margin-bottom: 12px;
+            color: #00ffc3;
+            font-size: 1.3em;
         }
         .project-item p {
-            font-size: 0.9em;
+            font-size: 0.95em;
         }
         .project-item a {
             display: inline-block;
             margin-top: 10px;
-            color: #00adb5;
+            color: #00ffc3;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
         .project-item a:hover {
-            color: #f5f5f5;
+            color: #ffffff;
         }
+
         /* Responsive */
         @media (max-width: 768px) {
             .project-list {
                 flex-direction: column;
                 align-items: center;
             }
-            .project-item {
-                width: 80%;
-            }
         }
+
         /* Animations */
         @keyframes fadeIn {
             from {opacity: 0;}
@@ -138,34 +147,41 @@
     <div class="container">
         <!-- Header Section -->
         <div class="header">
-            <img src="Assets\ppictures2.jpg" alt="Profile Picture">
+            <img src="Assets/ppictures2.jpg" alt="Profile Picture">
             <h1>Bayu Laksono</h1>
-            <p>I am a Person who Likes to do Many things. I Love to Build body Strength, also I really Enthusiastic wiht Science and Art.<br><br><i>Feel Free to Know me in Social media</i> </p>
+            <p>
+                I am a Person who Likes to do Many things. I Love to Build body Strength,  
+                also I really Enthusiastic with Science and Art.<br><br>
+                <i>Feel Free to Know me in Social media</i>
+            </p>
             <div class="social-links">
-                <a href="https://www.tiktok.com/@skyghost.id?is_from_webapp=1&sender_device=pc" target="_blank">TikTod</a>
+                <a href="https://www.tiktok.com/@skyghost.id?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
                 <a href="https://www.instagram.com/sky.namz" target="_blank">Instagram</a>
                 <a href="https://www.youtube.com/@SkyGhostID" target="_blank">YouTube</a>
             </div>
         </div>
+
         <!-- Projects Section -->
         <div class="projects">
             <h2>My Projects</h2>
             <div class="project-list">
                 <div class="project-item">
-                    <h3>Mini Projecct - Tebak Huruf Jepang</h3>
-                    <p>Tebak Huruf jepang Kanji, Hiragana, Katakana. Dengan UI Interaktif. Ditambah Dengan Tabel Huruf Jepang. Project Version v1.0.0</p>
+                    <h3>Mini Project - Tebak Huruf Jepang</h3>
+                    <p>
+                        Tebak Huruf Jepang Kanji, Hiragana, Katakana. Dengan UI Interaktif.  
+                        Ditambah Dengan Tabel Huruf Jepang. Project Version v1.0.0
+                    </p>
                     <a href="SkyGhostID-TebakHurufJepang/index.html" target="_blank">View Project</a>
                 </div>
                 <div class="project-item">
                     <h3>AI Chat Bot</h3>
                     <p>Masih dalam Pengembangan..</p>
-                    <a href="0" target="_blank">View Project</a>
+                    <a href="#" target="_blank">View Project</a>
                 </div>
                 <div class="project-item">
                     <h3>Youtube MP3 Converter</h3>
                     <p>Masih dalam Pengembangan..</p>
-                    <a href="0" target="_blank">View Project</a>
-                </div>
+                    <a href="#" target="_blank">View Project</a>
                 </div>
             </div>
         </div>
