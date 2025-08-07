@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -215,50 +216,99 @@
       .skill-bar span { font-size:0.9em; }
       .project-item { width:90%; padding:20px; }
     }
+
+    .loading-project{
+      position: relative;
+      background: transparent;
+      display: flex;
+      justify-content: center; /* center horisontal */
+      align-items: center;
+       flex-direction: column;
+
+    }
   </style>
+  <link rel="stylesheet" href="preload.css">
 </head>
 
 <body>
-
-  <nav>
-    <div class="brand">Naetziel Laksono</div>
-    <button class="hamburger" id="hamburger">☰</button>
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+<!-- PRELOADER OVERLAY -->
+  <!-- <div id="preloader">
+    <div class="loader">
+      <svg width="120" height="30" viewBox="0 0 120 30" aria-label="Loading…" role="img">
+        <circle cx="15" cy="15" r="15">
+          <animate attributeName="r" from="15" to="5" dur="0.6s" begin="0s" repeatCount="indefinite"/>
+          <animate attributeName="fill-opacity" from="1" to="0.3" dur="0.6s" begin="0s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="60" cy="15" r="15">
+          <animate attributeName="r" from="15" to="5" dur="0.6s" begin="0.2s" repeatCount="indefinite"/>
+          <animate attributeName="fill-opacity" from="1" to="0.3" dur="0.6s" begin="0.2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="105" cy="15" r="15">
+          <animate attributeName="r" from="15" to="5" dur="0.6s" begin="0.4s" repeatCount="indefinite"/>
+          <animate attributeName="fill-opacity" from="1" to="0.3" dur="0.6s" begin="0.4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
     </div>
-    <button class="toggle-btn" id="themeToggle">🌓</button>
-  </nav>
+  </div> -->
+  <div id="app">
 
-  <section id="home">
-    <img src="Assets/a782fcd0-36e9-4f4f-a610-8f27e22d42a4.jpeg" alt="Profile Picture">
-    <h1>Naetziel Laksono</h1>
-    <div class="tagline">“Lifelong Learner & Bodybuilder”</div>
-    <div class="description">
-      Enthusiastic about body strength, science & art. Welcome to my personal space on the web!
+    <nav>
+      <div class="brand">Naetziel Laksono</div>
+      <button class="hamburger" id="hamburger">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="toggle-btn" id="themeToggle">🌓</button>
+    </nav>
+    
+    <section id="home">
+      <img src="https://raw.githubusercontent.com/zelionhost/zelionhost.github.io/refs/heads/main/Assets/a782fcd0-36e9-4f4f-a610-8f27e22d42a4.jpeg" alt="Profile Picture">
+      <h1>Naetziel Laksono</h1>
+      <div class="tagline">“Lifelong Learner & Bodybuilder”</div>
+      <div class="description">
+        Enthusiastic about body strength, science & art. Welcome to my personal space on the web!
     </div>
     <div class="social-links">
-      <a href="#blank" target="_blank">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1010 10V2h-10z"/></svg>TikTok
-      </a>
-      <a href="#blank" target="_blank">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm5 15a5 5 0 115-5 5 5 0 01-5 5zm6.5-9.5a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg>Instagram
-      </a>
-      <a href="#blank" target="_blank">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M10 15l5-3-5-3v6z"/></svg>YouTube
-      </a>
-    </div>
-  </section>
+<a href="#blank" target="_blank" class="social-link">
+  <!-- TikTok Icon (Ionicons) -->
+  <svg class="social-icon" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+    <path
+    fill="currentColor"
+    d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z"
+    />
+  </svg>
+  TikTok
+</a>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="bio">
-      Hi, I’m Naetziel Laksono. I love pushing my physical and creative limits—whether it’s building body strength in the gym, diving deep into scientific curiosities, or expressing myself through art. Let’s connect and create something amazing together!
-    </div>
-  </section>
+<a href="#blank" target="_blank" class="social-link">
+  <!-- Instagram Icon -->
+  <svg class="social-icon" viewBox="0 0 448 512" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.8 224.1 370.8 339 319.5 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7S184.5 184.2 224.1 184.2s71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12 27-27 27h-27c-14.9 0-27-12-27-27v-27c0-14.9 12-27 27-27h27c14.9 0 27 12 27 27v27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.6S342.8 15.7 307.1 14C268.7 12.2 179.3 12.2 140.9 14c-35.7 1.7-67.3 9.9-93.6 36.2S15.7 109.2 14 144.9C12.2 183.3 12.2 272.7 14 311.1c1.7 35.7 9.9 67.3 36.2 93.6s57.9 34.5 93.6 36.2c38.4 1.8 127.8 1.8 166.2 0 35.7-1.7 67.3-9.9 93.6-36.2s34.5-57.9 36.2-93.6c1.8-38.4 1.8-127.8 0-166.2zm-48.5 210.8c-7.8 19.7-22.9 34.8-42.6 42.6-29.5 11.7-99.7 9-132.9 9s-103.4 2.6-132.9-9c-19.7-7.8-34.8-22.9-42.6-42.6-11.7-29.5-9-99.7-9-132.9s-2.6-103.4 9-132.9c7.8-19.7 22.9-34.8 42.6-42.6 29.5-11.7 99.7-9 132.9-9s103.4-2.6 132.9 9c19.7 7.8 34.8 22.9 42.6 42.6 11.7 29.5 9 99.7 9 132.9s2.7 103.4-9 132.9z"/>
+  </svg>
+  Instagram
+</a>
+
+<a href="#blank" target="_blank" class="social-link">
+  <!-- YouTube Icon -->
+  <svg class="social-icon" viewBox="0 0 576 512" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M549.655 124.083c-6.281-23.723-24.837-42.279-48.56-48.56C458.834 64 288 64 288 64s-170.834 0-213.095 11.523c-23.723 6.281-42.279 24.837-48.56 48.56C16.822 167.345 16.822 256 16.822 256s0 88.655 9.523 131.917c6.281 23.723 24.837 42.279 48.56 48.56C117.166 448 288 448 288 448s170.834 0 213.095-11.523c23.723-6.281 42.279-24.837 48.56-48.56C559.178 344.655 559.178 256 559.178 256s0-88.655-9.523-131.917zM232 334.311V177.689L345.333 256 232 334.311z"/>
+  </svg>
+  YouTube
+</a>
+</div>
+
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="bio">
+    Hi, I’m Naetziel Laksono. I love pushing my physical and creative limits—whether it’s building body strength in the gym, diving deep into scientific curiosities, or expressing myself through art. Let’s connect and create something amazing together!
+  </div>
+</section>
 
   <section id="skills">
     <h2>My Skills</h2>
@@ -279,69 +329,69 @@
       <div class="bar-bg"><div class="bar-fill" data-fill="60%"></div></div>
     </div>
   </section>
-
+  
   <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project-list">
-      <div class="project-item">
-        <h3>Mini Project: Tebak Huruf Jepang</h3>
-        <p>Guess Kanji, Hiragana, Katakana with interactive UI + reference table. v1.0.0</p>
-        <a href="SkyGhostID-TebakHurufJepang/index.html" target="_blank">View Project</a>
-      </div>
-      <div class="project-item">
-        <h3>AI Chat Bot</h3>
-        <p>Under development…</p>
-        <a href="#" target="_blank">View Project</a>
-      </div>
-      <div class="project-item">
-        <h3>YouTube MP3 Converter</h3>
-        <p>Under development…</p>
-        <a href="#" target="_blank">View Project</a>
-      </div>
-    </div>
-  </section>
+    <!-- HTML -->
+    <h2>My Projects</h2> <!--
+      <div class="project-list">
+        <div class="project-item">
+          <h3>Mini Project: Tebak Huruf Jepang</h3>
+          <p>Guess Kanji, Hiragana, Katakana with interactive UI + reference table. v1.0.0</p>
+          <a href="SkyGhostID-TebakHurufJepang/index.html" target="_blank">View Project</a>
+        </div>
+        <div class="project-item">
+          <h3>AI Chat Bot</h3>
+          <p>Under development…</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="project-item">
+          <h3>YouTube MP3 Converter</h3>
+          <p>Under development…</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+      </div> -->
+      
+      <div class="loading-project">
+        <svg
+        width="120" height="30"
+        viewBox="0 0 120 30"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="Loading…"
+    role="img"
+  >
+    <circle cx="15" cy="15" r="15">
+      <animate attributeName="r" from="15" to="5" dur="0.6s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" from="1" to="0.3" dur="0.6s" begin="0s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="15" r="15">
+      <animate attributeName="r" from="15" to="5" dur="0.6s" begin="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" from="1" to="0.3" dur="0.6s" begin="0.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="105" cy="15" r="15">
+      <animate attributeName="r" from="15" to="5" dur="0.6s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" from="1" to="0.3" dur="0.6s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+  <span id="prjloadtxt">Loading…</span>
+</div>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out on any social platform above. Let’s collaborate!</p>
-  </section>
-  <footer>
-    <div class="footer-container container">
-      © 2025 Zelion. All rights reserved.
-    </div>
-  </footer>
-  <button id="toTop" title="Back to top">↑</button>
+</section>
 
-  <script>
-    // Mobile menu toggle
-    document.getElementById('hamburger').onclick = () => {
-      document.getElementById('navLinks').classList.toggle('show');
-    };
-    // Scroll animations
-    const sections = document.querySelectorAll('section');
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
-    }, { threshold: 0.2 });
-    sections.forEach(s => obs.observe(s));
-    // Theme toggle
-    const themeBtn = document.getElementById('themeToggle');
-    themeBtn.onclick = () => {
-      document.documentElement.classList.toggle('light');
-      themeBtn.textContent = document.documentElement.classList.contains('light') ? '🌙' : '🌓';
-    };
-    // Skill bars animation
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.bar-fill').forEach(el => {
-        el.style.width = el.getAttribute('data-fill');
-      });
-    });
-    // Back to top
-    const toTop = document.getElementById('toTop');
-    window.onscroll = () => {
-      toTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-    };
-    toTop.onclick = () => window.scrollTo({ top:0, behavior:'smooth' });
-  </script>
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Feel free to reach out on any social platform above. Let’s collaborate!</p>
+</section>
+<footer>
+  <div class="footer-container container">
+    © 2025 by Zelion. All rights reserved.
+  </div>
+</footer>
+<button id="toTop" title="Back to top">↑</button>
+
+<script src="temp/debug/scripts.js"></script>
+<script src="scripts.js"></script>
+<script src="preloader.js"></script>
+</div>
 </body>
 </html>
 
